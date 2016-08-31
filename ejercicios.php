@@ -99,6 +99,70 @@
           $cont1++;
         }
 
+        //ejercicio string
+         $str = "Federico";
+          $cont = 0;
+          for($i=0; $i<strlen($str); $i++){
+          echo "La letra '$str[$i]'"." esta en la posicion ".$cont."<br>";
+          $cont ++;
+          }
+
+          //ejercicio
+          $nombre = "Garcia, Maria";
+          for($i=0; $i<strlen($nombre); $i++){
+          echo "$i :".$nombre[$i]."<br>";
+          }
+
+          while (strpos($nombre,",",0)) {
+            $pos = strpos($nombre,",",0);
+            $apellido = substr($nombre,0,$pos); //$pos devuelve cantidad de letras
+            $primer_nombre = substr($nombre, $pos+1, strlen($nombre)-$pos);
+
+            echo $apellido;
+            echo $primer_nombre;  
+            $nombre = $primer_nombre;
+            }
+            
+            // ejercicio word
+             $str = 'peter es un nombre en inglés'; 
+          echo ucwords($str) ."<br>"; //coloca mayusculas en cada primer palabra
+          echo ucfirst($str)."<br>";  // coloca mayuscula en la primer palabra
+          echo strtoupper($str)."<br>"; //mayusculas
+          echo strtolower( $str)."<br>"; // minusculas
+          echo trim( $str)."<br>"; //saca los espacios de los extremos
+          echo strlen($str)."<br>"; //cuenta las palabras
+          echo strpos($str, "un", 0)."<br>"; //en este caso busca la posicion donde empieza 'un'
+
+          /*$cadena = "Didáctica y divulgación de la programación";
+
+        while (strpos($cadena," ",0)) {
+            $pal1 = strpos($cadena,0,9);
+            $pal2 = substr($cadena,10,1);
+            $pal3 = substr($cadena,12,11);
+            $pal4 = substr($cadena,24,2);
+            $pal5 = substr($cadena,27,2);
+            $pal6 = substr($cadena,30,13);
+
+            }*/
+
+            $cadena1 = "gatos";
+            $cadena1[0] = "p";
+            echo $cadena1."<br>";
+            $cadena1[1] = "e";
+            $cadena1[3] = "a";
+            $cadena1[4] = "l";
+            $cadena1[5] = "o";
+            $cadena1[6] = "s";
+            echo $cadena1;
+
+            //ejercicio 4 word
+            $cadena2 = "Como no sabías disimular me di cuenta enseguida de que para verte como yo quería era necesario empezar por cerrar los ojos.  Rayuela Julio Cortázar";
+            $caracteres = strlen($cadena2);
+            echo "tiene $caracteres";
+            $esp=strpos($cadena2, " ", 0);
+            echo $esp;
+          
+
         ?>     
     </table>
     </div>
