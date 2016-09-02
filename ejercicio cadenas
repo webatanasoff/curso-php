@@ -1,0 +1,31 @@
+<?php 
+		echo "hello friend <br>";
+		$edad1 = 21;
+		$edad2 = 23;
+		if ($edad1<$edad2){
+			echo "'$edad1' es menor que '$edad2' <br>";
+		}
+		/*
+		$ladoA=2;
+		$ladoB=2;
+		$ladoC=2;
+		if ($ladoA==$ladoB && $ladoB==$ladoC){
+			echo "es equilatero";
+		}else if($ladoA==$ladoB && $ladoB!=$ladoC && $ladoA!=$ladoC){
+			echo "es escaleno";
+		}else {
+			echo "isoceles";
+		}*/
+
+		$cadena = "Como no sabías disimular me di cuenta enseguida de que para verte como yo quería era necesario empezar por cerrar los ojos. Rayuela Julio Cortázar";
+		$caracteres = strlen($cadena);
+		echo $caracteres."<br>";
+		$palabras = count(explode(" ", $cadena));
+		echo "la cantidad de palabras es ".$palabras."<br>";
+		 $pos = 0;
+		for($i = 0; $i<$caracteres; $i++){
+			$pos = strpos($cadena,"era",0);
+			
+		}
+		echo "la posicion es la ".$pos;
+	 ?>
