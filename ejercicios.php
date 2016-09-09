@@ -161,110 +161,157 @@
             echo "tiene $caracteres";
             $esp=strpos($cadena2, " ", 0);
             echo $esp;
+
+             $cadena1 = "gatos";
+            $cadena1[0] = "p";
+            echo $cadena1."<br>";
+            $cadena1[1] = "e";
+            $cadena1[3] = "a";
+            $cadena1[4] = "l";
+            $cadena1[5] = "o";
+            $cadena1[6] = "s";
+            echo $cadena1."<br>";
+            //$cadena1= substr($cadena1,3,2);
+            //$cadena1= $cadena."alos".
+
+
+            //ejercicio 4 word
+           
+            $cadena = "Como no sabías disimular me di cuenta enseguida de que para verte como yo quería era necesario empezar por cerrar los ojos. Rayuela Julio Cortázar";
+            $caracteres = strlen($cadena);
+            echo "la cantidad de caracteres es ".$caracteres."<br>";
+
+            //cantidad de palabras
+            $palabras = count(explode(" ", $cadena));
+            echo "la cantidad de palabras es ".$palabras."<br>";
+            
+            //posicion de "era"
+            $pos = 0;
+            for($i = 0; $i<$caracteres; $i++){
+            $pos = strpos($cadena,"era",0);
+            }
+            echo "la posicion es la ".$pos."<br>";
+
+            //contar palabra
+            $contaPalabra = 0;
+            for($i = 0; $i<$caracteres; $i++){
+              if ($cadena[$i] ==" "){
+              $contaPalabra ++;
+
+              }
+            }
+            echo "la cantidad de palabras es ".($contaPalabra+1);
           
+
+          function armarTexto($resultado, $ejercicio){
+        $texto= " el resultado del ejercicio $ejercicio es $resultado";
+        return $texto;
+      }
+
+      $str = "esto es un texto";
+      $leyenda = armarTexto(strlen($str),3);
+      echo $leyenda;        
+
+
+      //ejercicio 5 ---------------------------
+      function promedio3($a,$b,$c){
+        $promedio =  ($a+$b+$c)/3;
+        return $promedio;
+      }
+      echo "el promedio de los 3 numeros es ".promedio3(22,12,32)."<br><br><br>";
+
+      // ejercicio 6 -----------------------------
+      function buscaNum($cadena){
+        for ($i=0; $i < strlen($cadena); $i++) { 
+        
+        if($cadena[$i] == '1'){
+          return "encontro";
+          break;          
+          }
+        }
+      }
+
+        $texto = "fe1de";
+        echo buscaNum($texto);
+
+        //ejercicio 7.a --------------------
+        function sumarCinco($a,$b,$c,$d,$e){
+          return ($a + $b +$c +$d +$e);
+        }
+
+        //ejercicio 7.b ----------------------
+        function sumar5($a,$b,$c,$d,$e){
+          $tmp=($a+$b+$c+$d+$e);
+          return $tmp;
+        }
+        echo "<br><br>la suma de los 5 numeros entre si es ".sumar5(1,11,10,14,18)."<br>";
+
+        //ejercicio 7.c -----------------------------
+        function siguiente($a){
+          return ($a+1);
+        }
+        echo "el numero siguiente de 4 es ".siguiente(4)."<br>";
+        
+        //ejercicio 7.d --------------------------------
+        function doble($a){
+          return ($a*2);
+        }
+        echo "el doble de 5 es: ".doble(5)."<br>";
+
+        //ejercicio 7.e --------------------------------
+        function cuadrado($a){
+          return ($a*$a);
+        }
+        echo "9 elevado al cuadrado es ".cuadrado(9)."<br>";
+
+        //ejercicio 7.f
+        function imprimirValores($a){
+        echo "<br>ejercicio de imprimir valores!! <br>";
+        echo "el numero siguiente de $a es ".siguiente($a)."<br>";
+        echo "el numero doble de $a es ".doble($a)."<br>";
+        echo "el numero al cuadrado de $a es ".cuadrado($a)."<br>";        
+        }
+        echo imprimirValores(5);
+
+
+        //ejercicio 8.a----------------------
+        $texto8="esto es un texto de prueba";
+        function LetraCapital($texto){
+          return ucwords($texto);
+        }
+        echo LetraCapital($texto8)."<br>";
+      
 
         ?>     
     </table>
     </div>
 
+    function mostrarResultado($ejer,$resultado){
+          echo "<div class='panel panel-primary'>
+                <div class='panel-heading'>ejercicio numero $ejer</div>
+                <div class='panel-body'>
+                <p style='color:black;'>el resultado da '$resultado'<p>
+                </div>
+                </div>";
+          
+          
+        }
+
+        function sumar5($a,$b,$c,$d,$e){
+          $tmp=($a+$b+$c+$d+$e);
+          return $tmp;
+        }
+        mostrarResultado(2,"no tiene numero");
+
+        //echo "<br><br>la suma de los 5 numeros entre si es ".sumar5(1,11,10,14,18)."<br>";
+
+        mostrarResultado(7,sumar5(1,1,1,1,1));
+
+
 
   </div>
 
-//ejercicio 4 word
-    $cadena2 = "Como no sabías disimular me di cuenta enseguida de que para verte como yo quería era necesario empezar por cerrar los ojos. Rayuela Julio Cortázar";
-    $caracteres = strlen($cadena2);
-    echo "tiene $caracteres caracteres <br>";
-    $esp=strpos($cadena2, "era", 0);
-    echo "la palabra 'era' aparece en la posicion ".$esp."<br>";
-
-		// EJERCICIO 5 FUNCIONES ---------------
-		function promedio3($a,$b,$c){
-			$promedio = ($a+$b+$c)/3;
-			return "el promedio de los 3 numeros es ".$promedio."<br>";
-		}
-		echo promedio3(3,3,3);
-
-		//------- Ejercicio 6-----------
-		function tieneNumeros( $cadena) {
-			$resultado = false;
-			for ($i=0; $i<strlen($cadena); $i++){
-				if (is_numeric($cadena[$i]) ){
-					$resultado = true;
-						return ($resultado);
-		    	break;
-				}
-			}
-		}
-
-	if (tieneNumeros($cadena2)){
-		echo "tiene numeros <br>";
-	}	else {
-		echo "no tiene numeros <br>";
-	}
-
-	//ejercicio 7--------
-	//A
-	function cincoNumeros($a,$b,$c,$d,$e){
-		$suma=$a+$b+$c+$d+$e;
-		echo "la suma de los cinco numeros es ".$suma."<br>";
-	}
-	cincoNumeros(1,2,3,4,5);
-
-	//b
-	//c
-	function siguiente($a){
-		$siguiente = $a+1;
-		return "el numero siguiente de $a es ".$siguiente."<br>";
-	}
-
-	echo siguiente(2);
-
-	//d
-	function doble($num){
-		$doble = $num*2;
-		return "el doble de $num es $doble"."<br>";
-	}
-
-	echo doble(5);
-
-	//e
-	function cuadrado($num){
-		$cuadrado = $num*$num;
-		return "el doble de $num es $cuadrado"."<br>";
-	}
-
-	echo cuadrado(5);
-
-	//D
-	function imprimirValores($num){
-		echo siguiente($num);
-		echo doble($num);
-		echo cuadrado($num);
-		}
-
-		imprimirValores(6);
-
-		//ejercicio 8
-		//A
 
    ?>
 
 	 ?>
-	 
-	 EJERCICIO TABLA
-	 <div class="container">
-		<table class="table table-bordered">
-		<?php
-		//echo "hello friend <br>";
-		$cont1=1;
-		while($cont1<11){
-		echo "<tr>
-					<td> Fila $cont1 - Col 0</td>
-					<td> Fila $cont1 - Col 1</td>
-					<td> Fila $cont1 - Col 2</td>
-					</tr>";
-		$cont1++;
-		}
-		?>
-		</table>
-	</div>
