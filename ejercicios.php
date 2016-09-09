@@ -250,3 +250,21 @@
    ?>
 
 	 ?>
+	 
+	 EJERCICIO TABLA
+	 <div class="container">
+		<table class="table table-bordered">
+		<?php
+		//echo "hello friend <br>";
+		$cont1=1;
+		while($cont1<11){
+		echo "<tr>
+					<td> Fila $cont1 - Col 0</td>
+					<td> Fila $cont1 - Col 1</td>
+					<td> Fila $cont1 - Col 2</td>
+					</tr>";
+		$cont1++;
+		}
+		?>
+		</table>
+	</div>
