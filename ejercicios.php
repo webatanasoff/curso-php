@@ -170,6 +170,82 @@
 
   </div>
 
+//ejercicio 4 word
+    $cadena2 = "Como no sabías disimular me di cuenta enseguida de que para verte como yo quería era necesario empezar por cerrar los ojos. Rayuela Julio Cortázar";
+    $caracteres = strlen($cadena2);
+    echo "tiene $caracteres caracteres <br>";
+    $esp=strpos($cadena2, "era", 0);
+    echo "la palabra 'era' aparece en la posicion ".$esp."<br>";
+
+		// EJERCICIO 5 FUNCIONES ---------------
+		function promedio3($a,$b,$c){
+			$promedio = ($a+$b+$c)/3;
+			return "el promedio de los 3 numeros es ".$promedio."<br>";
+		}
+		echo promedio3(3,3,3);
+
+		//------- Ejercicio 6-----------
+		function tieneNumeros( $cadena) {
+			$resultado = false;
+			for ($i=0; $i<strlen($cadena); $i++){
+				if (is_numeric($cadena[$i]) ){
+					$resultado = true;
+						return ($resultado);
+		    	break;
+				}
+			}
+		}
+
+	if (tieneNumeros($cadena2)){
+		echo "tiene numeros <br>";
+	}	else {
+		echo "no tiene numeros <br>";
+	}
+
+	//ejercicio 7--------
+	//A
+	function cincoNumeros($a,$b,$c,$d,$e){
+		$suma=$a+$b+$c+$d+$e;
+		echo "la suma de los cinco numeros es ".$suma."<br>";
+	}
+	cincoNumeros(1,2,3,4,5);
+
+	//b
+	//c
+	function siguiente($a){
+		$siguiente = $a+1;
+		return "el numero siguiente de $a es ".$siguiente."<br>";
+	}
+
+	echo siguiente(2);
+
+	//d
+	function doble($num){
+		$doble = $num*2;
+		return "el doble de $num es $doble"."<br>";
+	}
+
+	echo doble(5);
+
+	//e
+	function cuadrado($num){
+		$cuadrado = $num*$num;
+		return "el doble de $num es $cuadrado"."<br>";
+	}
+
+	echo cuadrado(5);
+
+	//D
+	function imprimirValores($num){
+		echo siguiente($num);
+		echo doble($num);
+		echo cuadrado($num);
+		}
+
+		imprimirValores(6);
+
+		//ejercicio 8
+		//A
 
    ?>
 
