@@ -1,0 +1,84 @@
+<?php
+        /* -----------------EJERCICIO a)
+         Declara un array de enteros de nombre $coches e introduce en él 8 
+        elementos cuyos valores sean 32, 11, 45, 22, 78, -3, 9, 66, 5.
+        Muestra por pantalla el elemento con localizador 5. 
+        Deberás mostrar por pantalla el que contiene a  el -3.*/
+        $coches=array(32,11,45,22,78,-3,9,66,5);
+        echo "el elemento con el localizador 5 es ".$coches[5]."<br>";
+
+        /* -----------EJERCICIO 7b
+        b) Declara un array de numéricos decimales tipo double de nombre $importe e introduce en él cuatro elementos que sean 32.583, 11.239, 45.781, 22.237. 
+        Muestra por pantalla los elementos junto con su localizador. 
+        */
+        $importe=array(32.583, 11.239, 45.781, 22.237);
+        $elemento=0;
+        for ($i=0; $i < count($importe); $i++) { 
+          echo "el elemento $elemento tiene como valor ".$importe[$i]."<br>";
+          $elemento++;
+        }
+
+        /* -------------- EJERCICIO 7c
+        c) Declara un array de booleanos de nombre $confirmado e introduce en él seis elementos que sean true, true, false, true, false, false. 
+        A continuación muestra por pantalla el elemento con localizador 0. 
+        */
+        $confirmado=array(true, true, false, true, false, false);
+        echo $confirmado[0]."<br>";
+
+        /*-------- EJERCICIO 7d
+        d) Declara un array de strings de nombre $jugador e introduce en él 5 elementos que sean "Crovic", "Antic", "Malic", "Zulic" y "Rostrich". 
+        A continuación usando el operador de concatenación haz que se muestre la frase: <<La alineación del equipo está compuesta por Crovic, Antic, Malic, Zulic y Rostrich.>>*/
+        $jugador=array("Crovic", "Antic", "Malic", "Zulic", "Rostrich");
+        echo "La alineación del equipo está compuesta por ".$jugador[0].", ".$jugador[1].", ".$jugador[2].", ".$jugador[3]." y ".$jugador[4]."<br>";
+
+        //---------EJERCICIO PAISES LIMITROFES - FOR
+        $paisesLimitrofes=array("chile","uruguay","paraguay","bolivia","brasil");
+        echo "los paises limitrofes de argentina son ";
+        for ($i=0; $i < count($paisesLimitrofes); $i++) { 
+          echo $paisesLimitrofes[$i].", ";
+        }
+        //---------EJERCICIO PAISES LIMITROFES - FOREACH
+        echo "<br><br><br> los paises limitrofes son: ";
+        foreach ($paisesLimitrofes as $pais) {
+
+           $separador =",";
+           if($i==count($paisesLimitrofes)-2){
+            $separador=" y "  
+           } 
+            echo $pais.$separador;
+        }
+
+        //---------EJERCICIO PAISES LIMITROFES - FOREACH
+        $paisesLimitrofes=array("chile","uruguay","paraguay","bolivia","brasil");
+
+
+
+        echo "los paises limitrofes de argentina son ";
+        for ($i=0; $i < count($paisesLimitrofes); $i++)
+        { 
+         if($i<(count($paisesLimitrofes)-2))
+          {
+            echo $paisesLimitrofes[$i].", ";
+          }
+          else if ($i==(count($paisesLimitrofes)-2))
+          {
+              echo $paisesLimitrofes[$i]." y ";
+          }
+          else
+          {
+              echo $paisesLimitrofes[$i].".";
+          }
+        }
+
+        echo "<br><br><br> los paises limitrofes son: ";
+        foreach ($paisesLimitrofes as $i) {
+          $separador =", ";
+          if($i==(count($paisesLimitrofes)-2)){
+          $separador=" y ";
+          }
+          echo $i.$separador;
+
+        }
+
+
+        ?>
